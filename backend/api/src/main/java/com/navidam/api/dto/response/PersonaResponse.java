@@ -4,5 +4,4 @@ public record PersonaResponse(
         Long id,
         String nombre,
         String email
-
 ) { }

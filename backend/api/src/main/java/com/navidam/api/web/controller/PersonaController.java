@@ -34,7 +34,7 @@ public class PersonaController {
 
     @DeleteMapping("/personas/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void eliminarPersona(Long id){
+    void eliminarPersona(@PathVariable Long id){
         this.personaService.eliminarPersona(id);
     }
 

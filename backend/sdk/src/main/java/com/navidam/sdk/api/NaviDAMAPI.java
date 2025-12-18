@@ -2,6 +2,7 @@ package com.navidam.sdk.api;
 
 import com.navidam.sdk.api.melodias.HappyXmas;
 import com.navidam.sdk.api.melodias.LosBuenosDias;
+import com.navidam.sdk.api.plantilla.PlantillaNavidadClasica;
 import com.navidam.sdk.internal.html.Plantilla;
 import com.navidam.sdk.internal.melodia.Melodia;
 
@@ -30,7 +31,9 @@ public class NaviDAMAPI {
 
     public List<Plantilla> listadoPlantillas() {
         return List.of(
-                // new Plantilla("demo").path("demo.html")
-        );
+        		PlantillaNavidadClasica.crear(),
+        		new Plantilla ("Demo navidad").path("plantilla-navidad1")
+        		
+        		);
     }
 }

@@ -11,5 +11,4 @@ export const router = createBrowserRouter([
     {path: "/alta-persona", element: <AltaPersona/>},
     {path: "/postales", element: <Postales/>},
     {path: "/personas", element: <AltaPersona/>},
-
 ]);

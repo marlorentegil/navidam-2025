@@ -1,4 +1,39 @@
+import type { Persona } from "@/types/persona";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function Postales(){
+
+    const [personas, setPersonas] = useState<Persona[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState("");
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        async function cargarPersonas() {
+            fetch('/api/personas')
+            try {
+                setLoading(true);
+                const res = await fetch('/api/personas');
+                if (!res.ok) throw new Error('Network response was not ok');
+                const data = await res.json();
+                setPersonas(data);
+            } catch (error) {
+                setError("Error al cargar las personas. Inténtalo de nuevo.");
+                console.error(error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        cargarPersonas();
+    }, []);
+
+    const handleChangePersona = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const selectedId = e.target.value;
+        console.log("Persona seleccionada ID:", selectedId);
+    }
+    
     return (
         <div className="rounded-[2rem] bg-white text-slate-900 shadow-2xl ring-1 ring-black/5 overflow-hidden">
         <div className="p-6 md:p-10 grid lg:grid-cols-2 gap-6">
@@ -18,14 +53,17 @@ export default function Postales(){
                     <div className="grid md:grid-cols-2 gap-4">
                         <div className="md:col-span-2">
                             <label className="text-sm text-slate-700">Destinatario</label>
-                            <select className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300">
+                            <select onChange={handleChangePersona}
+                            className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300">
+                                {personas?.map(p =>
+                                    <option key={p.id} value={p.id}>{p.nombre} ({p.email})</option>
+                                )}
                                 <option>[React: listado de personas]</option>
                             </select>
                             <p className="mt-2 text-xs text-slate-500">
                                 React mostrará aquí el nombre y email del destinatario seleccionado.
                             </p>
                         </div>
-
                         <div>
                             <label className="text-sm text-slate-700">Plantilla</label>
                             <select className="mt-1 w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 outline-none focus:ring-2 focus:ring-red-300">

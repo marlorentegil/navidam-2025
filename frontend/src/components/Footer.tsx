@@ -9,13 +9,13 @@ export default function Footer(){
                         </div>
                         <div>
                             <p className="font-semibold text-white">NaviDAM</p>
-                            <p className="text-xs text-white/60">@2025 Iván Corrales</p>
+                            <p className="text-xs text-white/60">@2025 DAM1 Y DAM 2</p>
                         </div>
                     </div>
 
                     <div className="flex flex-wrap gap-2">
                         <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs">#DAM</span>
-                        <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs">#Hackathon</span>
+                        <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs">#Hackathon 2025</span>
                         <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs">#Software</span>
                     </div>
                 </div>

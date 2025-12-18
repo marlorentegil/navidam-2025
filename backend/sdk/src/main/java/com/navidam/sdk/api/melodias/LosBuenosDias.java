@@ -42,10 +42,7 @@ public class LosBuenosDias {
 			.nota(Nota.DO, Figura.BLANCA);
 			} catch (Exception fail) {
 			 return null;	
-			}
-			
-			
-					
+			}			
 		}
 
 	}

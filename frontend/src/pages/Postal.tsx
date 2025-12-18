@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function Postal() {
     const navigate = useNavigate();
+
+    
   return (
     <>
     <div className="fixed inset-0 -z-10">

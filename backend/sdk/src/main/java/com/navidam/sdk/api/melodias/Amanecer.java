@@ -8,7 +8,7 @@ import com.navidam.sdk.internal.melodia.Nota;
 public class Amanecer {
 	public static Melodia crear() {
 		try {
-		return new Melodia("Los Buenos Dias")
+		return new Melodia("Amanecer")
 				.instrumento(Instrumento.ACORDEON)
 				.tempo(100)
 				.nota(Nota.DO, Figura.NEGRA)

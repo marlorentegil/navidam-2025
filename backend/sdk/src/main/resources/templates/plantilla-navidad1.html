@@ -1,21 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Postal de Navidad</title>
 </head>
-<body>
-	
-    <h1>🎄 Feliz Navidad</h1>
-	
 
-    <p th:text="'Para: ' + ${m.nombre}"></p>
-    <p th:text="${m.mensaje}"></p>
-	
-    <footer>
-        <small>Generado con NaviDAM</small>
-		
-	
-    </footer>
+<body>
+
+    <section>
+        <h1 id="titulo-principal"> 🎅🎄 Feliz Navidad</h1>
+        <p id="remitente" th:text="${m.remitente} + ' te desea unas felices fiestas 🥂🦌"></p>
+        <p id="destinatario" th:text="'Para: ' + ${m.destinatario}"></p>
+        <p id="mensaje" th:text="${m.contenido}"></p>
+        <p id="melodia" th:text="'Han escogido la melodía ' + ${m.melodia} + ' para ti."></p>
+
+        <footer>
+            <p id="fecha" th:text="${m.fecha}"></p>
+
+
+        </footer>
+
+    </section>
+
 </body>
+
+<style>
+    body {
+        height: 100vh;
+        background: linear-gradient(135deg, #c00, #006400)
+    }
+
+    section {
+        width: 400px;
+        margin: 40px auto;
+        padding: 20px;
+        border: 3px solid #c00;
+        border-radius: 12px;
+        background-color: #fff8f0;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        font-family: 'Georgia', serif;
+    }
+
+    #titulo-principal {
+        color: #c00;
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    #remitente {
+        font-weight: bold;
+        color: #006400;
+        margin: 10px 0;
+    }
+
+    #destinatario {
+        font-style: italic;
+        margin: 10px 0;
+    }
+
+    #mensaje {
+        margin: 15px 0;
+        font-size: 1.1em;
+        line-height: 1.4;
+    }
+
+    #fecha {
+        margin-top: 15px;
+        font-size: 0.9em;
+        color: #444;
+        font-style: italic;
+        background-color: #f9f9f9;
+        padding: 5px 10px;
+        border-radius: 8px;
+        display: inline-block;
+    }
+
+    #melodia {
+        margin: 15px 0;
+        font-size: 1em;
+        color: #8b0000;
+        font-weight: bold;
+        background-color: #fff0f5;
+        padding: 6px 12px;
+        border-radius: 10px;
+        display: inline-block;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
 </html>

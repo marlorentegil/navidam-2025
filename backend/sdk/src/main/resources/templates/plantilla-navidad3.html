@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Postal de Navidad</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 40px;
+    }
+ 
+    .tarjeta {
+      background-color: #fff;
+      border: 2px solid #c0392b;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+ 
+    h1 {
+      color: #c0392b;
+      margin-bottom: 10px;
+    }
+ 
+    .info {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+ 
+    .mensaje {
+      background-color: #fff7e6;
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 15px;
+    }
+ 
+    footer {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="tarjeta">
+    <h1>🎄 Felices Fiestas 🎄</h1>
+    <div class="info">De: <span th:text="${m.remitente}"></span></div>
+    <div class="info">Para: <span th:text="${m.destinatario}"></span></div>
+    <div class="mensaje">
+      <p th:text="${m.contenido}"></p>
+      <p th:text=${m.melodia}></p>
+    </div>
+    <footer>
+      Generado con NaviDAM • <span th:text="${#dates.format(#dates.createNow(), 'dd/MM/yyyy')}">18/12/2025</span>
+    </footer>
+   </div>
+</body>

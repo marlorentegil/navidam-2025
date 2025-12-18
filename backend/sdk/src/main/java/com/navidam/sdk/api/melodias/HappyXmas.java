@@ -6,6 +6,7 @@ import com.navidam.sdk.internal.melodia.Nota;
 
 public class HappyXmas {
 	public static Melodia crear() {
+		public static void main (String[]args ) {
     	try {
     	 return new Melodia("Happy Xmas")
             .instrumento(Instrumento.FLAUTA_DULCE)
@@ -37,6 +38,6 @@ public class HappyXmas {
          return null;	
     }
     }
-    
+	}
     }
 

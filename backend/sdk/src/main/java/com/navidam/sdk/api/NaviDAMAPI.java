@@ -32,7 +32,10 @@ public class NaviDAMAPI {
     public List<Plantilla> listadoPlantillas() {
         return List.of(
         		PlantillaNavidadClasica.crear(),
-        		new Plantilla ("Demo navidad").path("plantilla-navidad1")
+        		new Plantilla ("Navidad-1").path("plantilla-navidad1"),
+        		new Plantilla("Navidad-2").path("plantilla-navidad2"),
+        		new Plantilla("Navidad-3").path("plantilla-navidad3")
+     
         		
         		);
     }

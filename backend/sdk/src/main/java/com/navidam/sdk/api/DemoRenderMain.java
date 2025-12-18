@@ -39,7 +39,7 @@ public class DemoRenderMain {
         System.out.println("===== HTML RENDERIZADO =====");
         System.out.println(html);
 
-        // 3️⃣ Renderizar y guardar en fichero
+        // 3️⃣ Renderizar y guardar en fichero (( ES OTRA MANERA )) 
 //        Path salida = renderer.renderToFile(
 //            "demo",
 //            modelo,
